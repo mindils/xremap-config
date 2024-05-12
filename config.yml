@@ -1,0 +1,66 @@
+modmap:
+  #- name: Global
+  #  application:
+  #    not: [Gnome-terminal, jetbrains-idea]
+  #  remap:
+      # CapsLock/Ctrl_L -> Esc
+      # CapsLock: Esc
+      # Ctrl_L: Esc
+keymap:
+  - name: IDEA (modified from Default)
+    application:
+      only: jetbrains-idea
+    remap:
+      M-a: C-a
+      M-z: C-z
+      M-x: C-x
+      M-c: C-c # use C-c for Esc, M-c for copy
+      M-v: C-v # use C-v for Vim, M-v for paste
+      #M-w: C-w # avoid conflict with prefix
+      M-t: C-t
+      M-l: C-l
+
+      # actually these are vim insert mode bindings, but compatible with shell
+      # C-w: [C-Shift-left, delete]
+
+      C-d: delete
+      Super-d: C-delete
+
+      # workaround prefix key bug
+      M-r:
+        remap:
+          '3': C-M-3
+          '0': C-M-0
+
+  - name: Browsers 
+    application:
+      only: [firefox, Google-chrome]
+    remap:
+      M-r: C-r
+      M-f: C-f
+
+  - name: Google Search
+    application:
+      only: Google-chrome
+    remap:
+      Super-M-j: C-Shift-j
+
+  - name: Terminal
+    application:
+      only: Gnome-terminal
+    remap:
+      M-c: C-Shift-c
+      M-v: C-Shift-v
+
+  - name: Default -- some of these are overridden by the above definitions
+    application:
+      not: [Slack, Gnome-terminal, jetbrains-idea]
+    remap:
+      M-a: C-a
+      M-c: C-c
+      M-v: C-v
+      M-x: C-x
+      M-s: C-s
+      M-z: C-z
+      M-q: Super-q
+      M-w: C-w
