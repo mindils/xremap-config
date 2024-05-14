@@ -20,7 +20,7 @@ Description=xremap service
 [Service]
 Type=simple
 ExecStartPre=/bin/sleep 10
-ExecStart=~/.cargo/bin/xremap ~/.config/xremap/config.yml
+ExecStart=/home/leontyevas/.cargo/bin/xremap --watch /home/leontyevas/.config/xremap/config.yml
 Restart=always
 RestartSec=3
 
