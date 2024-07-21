@@ -16,9 +16,16 @@ keymap:
       M-x: C-x
       M-c: C-c # use C-c for Esc, M-c for copy
       M-v: C-v # use C-v for Vim, M-v for paste
+      C-M-v: C-M-v
+      C-M-o: C-M-o
       #M-w: C-w # avoid conflict with prefix
       M-t: C-t
       M-l: C-l
+      M-Shift-l: M-Shift-l
+      Super-M-r: Shift-F6
+      M-C-l: M-C-l
+      M-s: C-s # use C-v for Vim, M-v for paste
+      M-n: M-Insert
 
       # actually these are vim insert mode bindings, but compatible with shell
       # C-w: [C-Shift-left, delete]
@@ -32,12 +39,14 @@ keymap:
           '3': C-M-3
           '0': C-M-0
 
+
   - name: Browsers 
     application:
       only: [firefox, Google-chrome]
     remap:
       M-r: C-r
       M-f: C-f
+      M-Shift-t: C-Shift-t
 
   - name: Google Search
     application:
@@ -47,10 +56,11 @@ keymap:
 
   - name: Terminal
     application:
-      only: Gnome-terminal
+      only: [Gnome-terminal, kitty]
     remap:
       M-c: C-Shift-c
       M-v: C-Shift-v
+      M-q: Super-q
 
   - name: Default -- some of these are overridden by the above definitions
     application:
