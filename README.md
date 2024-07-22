@@ -26,7 +26,17 @@ sudo udevadm trigger
 reboot
 ```
 
-
+### Install GNOME Shell Extension for xremap (for GNOME users)  
+If you're using GNOME, you need to install the xremap GNOME Shell extension:
+  
+Visit https://extensions.gnome.org/extension/5060/xremap/  
+Click on the toggle switch to install the extension.  
+If prompted, allow the browser to install GNOME Shell extensions.  
+After installation, the toggle should turn blue, indicating that the extension is active.  
+  
+  
+Note: You may need to restart GNOME Shell (Alt+F2, then type 'r' and press Enter) or log out and log back in for the changes to take effect.  
+  
 ### Create a file named `xremap.service` in the ~/.config/systemd/user/` with the content:
 ```
 [Unit]
