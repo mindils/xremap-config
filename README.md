@@ -12,6 +12,21 @@ cargo install xremap                    # Others
 git clone git@github.com:mindils/xremap-config.git ~/.config/xremap
 ```
 
+### Set up permissions  
+Add user to the input group  
+Important: After executing this command, log out and log back in for the changes to take effect.  
+```sh
+sudo usermod -aG input $USER
+```  
+Create udev rules and reload the udev rules
+```sh
+echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess"' | sudo tee /etc/udev/rules.d/99-input.rules
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+reboot
+```
+
+
 ### Create a file named `xremap.service` in the ~/.config/systemd/user/` with the content:
 ```
 [Unit]
